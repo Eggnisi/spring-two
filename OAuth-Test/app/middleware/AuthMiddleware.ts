@@ -2,6 +2,7 @@ import { Context, Next } from "koa";
 import { verify } from "../../utils/auth";
 import LoginController from "../controller/LoginController";
 import response from "../../utils/response";
+//对一些需要验证token的请求进行验证
 function AuthMiddleware(ctx: Context, next: Next) {
   const token = ctx.headers["authorization"];
   if (token !== undefined && token !== "") {

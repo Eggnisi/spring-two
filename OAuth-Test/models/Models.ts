@@ -1,3 +1,6 @@
+/**
+ * sequelize的模型接口
+ */
 export interface IAdmin{
   name:string
   password:string

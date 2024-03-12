@@ -10,6 +10,7 @@ export interface IAdmin {
   password: string;
   redirect_url_code: number;
 }
+//使用第三方库进行参数校验，这里是配置参数
 const rules: Rules = {
   name: [
     {
@@ -39,6 +40,8 @@ const rules: Rules = {
   ],
 };
 class LoginController {
+  //当前登录用户的token和token过期时间放在这里
+  //这个处理其实不是很科学
   private static tokenMap:Map<number,string>=new Map()
   private static expireMap:Map<number,number> = new Map()
   public getTokenMap():Map<number,string>{

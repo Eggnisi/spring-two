@@ -8,6 +8,7 @@ export interface IAdmin{
   name:string,
   password:string
 }
+//之后可能会把参数校验的规则分到另一个文件中
 const rules:Rules = {
   name:[
     {

@@ -8,13 +8,6 @@ describe('http',()=>{
     server = run(3003)
   })
   it('Get /auth/login login_test',async ()=>{
-    // const res = await request(server)
-    // .post('/auth/login')
-    // const {token} = res.body
-    // console.log(res.body);
-    
-    // console.log(token);
-
     return request(server)
     .get('/auth')
     .expect(200)

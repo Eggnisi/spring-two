@@ -1536,3 +1536,43 @@
 [2024-03-12T13:29:11.739] [INFO] db - Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'Users' AND TABLE_SCHEMA = 'test'
 [2024-03-12T13:29:11.740] [INFO] db - Executing (default): SHOW INDEX FROM `Users`
 [2024-03-12T13:29:11.741] [INFO] db - Executing (default): SELECT 1+1 AS result
+[2024-03-12T16:45:10.098] [INFO] db - Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'Admins' AND TABLE_SCHEMA = 'test'
+[2024-03-12T16:45:10.100] [INFO] db - Executing (default): SELECT `id`, `name`, `password`, `created_at`, `updated_at` FROM `Admins` AS `Admin` WHERE `Admin`.`name` = 'Eggnisi' AND `Admin`.`password` = 654321 LIMIT 1;
+[2024-03-12T16:45:10.102] [INFO] db - Executing (default): SHOW INDEX FROM `Admins`
+[2024-03-12T16:45:10.152] [INFO] db - Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'Resources' AND TABLE_SCHEMA = 'test'
+[2024-03-12T16:45:10.155] [INFO] db - Executing (default): SHOW INDEX FROM `Resources`
+[2024-03-12T16:45:10.157] [INFO] db - Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'Users' AND TABLE_SCHEMA = 'test'
+[2024-03-12T16:45:10.159] [INFO] db - Executing (default): SHOW INDEX FROM `Users`
+[2024-03-12T16:45:10.160] [INFO] db - Executing (default): SELECT 1+1 AS result
+[2024-03-12T16:47:49.083] [INFO] db - Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'Admins' AND TABLE_SCHEMA = 'test'
+[2024-03-12T16:47:49.085] [INFO] db - Executing (default): SELECT `id`, `name`, `password`, `created_at`, `updated_at` FROM `Admins` AS `Admin` WHERE `Admin`.`name` = 'Eggnisi' AND `Admin`.`password` = 654321 LIMIT 1;
+[2024-03-12T16:47:49.086] [INFO] db - Executing (default): SHOW INDEX FROM `Admins`
+[2024-03-12T16:47:49.137] [INFO] db - Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'Resources' AND TABLE_SCHEMA = 'test'
+[2024-03-12T16:47:49.139] [INFO] db - Executing (default): SHOW INDEX FROM `Resources`
+[2024-03-12T16:47:49.141] [INFO] db - Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'Users' AND TABLE_SCHEMA = 'test'
+[2024-03-12T16:47:49.143] [INFO] db - Executing (default): SHOW INDEX FROM `Users`
+[2024-03-12T16:47:49.145] [INFO] db - Executing (default): SELECT 1+1 AS result
+[2024-03-12T16:51:10.886] [INFO] db - Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'Admins' AND TABLE_SCHEMA = 'test'
+[2024-03-12T16:51:10.890] [INFO] db - Executing (default): SELECT `id`, `name`, `password`, `created_at`, `updated_at` FROM `Admins` AS `Admin` WHERE `Admin`.`name` = 'Eggnisi' AND `Admin`.`password` = 654321 LIMIT 1;
+[2024-03-12T16:51:10.892] [INFO] db - Executing (default): SHOW INDEX FROM `Admins`
+[2024-03-12T16:51:10.920] [INFO] db - Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'Resources' AND TABLE_SCHEMA = 'test'
+[2024-03-12T16:51:10.921] [INFO] db - Executing (default): SHOW INDEX FROM `Resources`
+[2024-03-12T16:51:10.923] [INFO] db - Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'Users' AND TABLE_SCHEMA = 'test'
+[2024-03-12T16:51:10.924] [INFO] db - Executing (default): SHOW INDEX FROM `Users`
+[2024-03-12T16:51:10.926] [INFO] db - Executing (default): SELECT 1+1 AS result
+[2024-03-12T16:51:37.067] [INFO] db - Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'Admins' AND TABLE_SCHEMA = 'test'
+[2024-03-12T16:51:37.071] [INFO] db - Executing (default): SELECT `id`, `name`, `password`, `created_at`, `updated_at` FROM `Admins` AS `Admin` WHERE `Admin`.`name` = 'Eggnisi' AND `Admin`.`password` = 654321 LIMIT 1;
+[2024-03-12T16:51:37.072] [INFO] db - Executing (default): SHOW INDEX FROM `Admins`
+[2024-03-12T16:51:37.101] [INFO] db - Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'Resources' AND TABLE_SCHEMA = 'test'
+[2024-03-12T16:51:37.103] [INFO] db - Executing (default): SHOW INDEX FROM `Resources`
+[2024-03-12T16:51:37.105] [INFO] db - Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'Users' AND TABLE_SCHEMA = 'test'
+[2024-03-12T16:51:37.106] [INFO] db - Executing (default): SHOW INDEX FROM `Users`
+[2024-03-12T16:51:37.107] [INFO] db - Executing (default): SELECT 1+1 AS result
+[2024-03-12T16:52:46.805] [INFO] db - Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'Admins' AND TABLE_SCHEMA = 'test'
+[2024-03-12T16:52:46.808] [INFO] db - Executing (default): SELECT `id`, `name`, `password`, `created_at`, `updated_at` FROM `Admins` AS `Admin` WHERE `Admin`.`name` = 'Eggnisi' AND `Admin`.`password` = 654321 LIMIT 1;
+[2024-03-12T16:52:46.810] [INFO] db - Executing (default): SHOW INDEX FROM `Admins`
+[2024-03-12T16:52:46.823] [INFO] db - Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'Resources' AND TABLE_SCHEMA = 'test'
+[2024-03-12T16:52:46.824] [INFO] db - Executing (default): SHOW INDEX FROM `Resources`
+[2024-03-12T16:52:46.826] [INFO] db - Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'Users' AND TABLE_SCHEMA = 'test'
+[2024-03-12T16:52:46.827] [INFO] db - Executing (default): SHOW INDEX FROM `Users`
+[2024-03-12T16:52:46.828] [INFO] db - Executing (default): SELECT 1+1 AS result

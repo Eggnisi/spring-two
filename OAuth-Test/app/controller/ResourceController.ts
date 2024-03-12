@@ -4,7 +4,8 @@ import path from "path";
 import { verify } from "../../utils/auth";
 import response from "../../utils/response";
 import LoginController from "./LoginController";
-
+//我的资源接口中token是直接以querystring的明文给出的，确实有不安全的地方，但是当时直接这样写了
+//写爽了上头了属于是
 class ResourceController {
   async index(ctx: Context) {
     const { token } = ctx.query;

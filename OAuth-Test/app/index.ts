@@ -1,3 +1,8 @@
+//这个文件主要负责注册router
+
+/**
+ * 加载环境变量和连接数据库
+ */
 import dotenv from 'dotenv'
 dotenv.config()
 import db from './db'
