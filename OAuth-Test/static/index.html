@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        background: linear-gradient(to left, red, blue 100%);
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">你好，欢迎来到Eggnisi的二面作品首页</div>
+    <button class="checkin">一键登录</button>
+    <button class="resource">获取资源</button>
+    <button class="rollback">撤销登录</button>
+    <div class="tip">msg:请登录后再获取资源</div>
+  </body>
+  <script>
+    // localStorage.clear()
+    let rollback = document.querySelector(".rollback");
+    rollback.addEventListener("click", async () => {
+      localStorage.clear();
+      location.href = "http://localhost:8686/index.html";
+
+      rollback.style.display = "none";
+      signin.style.display = "";
+      const data = await fetch("http://localhost:8686/auth/login/cancel", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          authorization: token,
+        },
+        mode: "cors",
+      }).then(function (res) {
+        if (res.status === 200) {
+          return res.json();
+        } else {
+          return Promise.reject(res.json());
+        }
+      });
+      tip.innerHTML = 'msg:'+data.msg
+      console.log(data);
+    });
+    let signin = document.querySelector(".checkin");
+    signin.addEventListener("click", () => {
+      location.href = `http://localhost:8686/auth/login/page`;
+    });
+    let tip = document.querySelector(".tip");
+    console.log(location.search);
+    let str = location.search;
+    const array = str.split(/[?,=,&]/);
+    let searchMap = [];
+    for (let i = 1; i < array.length; i += 2) {
+      let obj = {
+        key: array[i],
+        value: array[i + 1],
+      };
+      searchMap.push(obj);
+    }
+    console.log(searchMap);
+    //记录登录状态 0代表未登录 1代表登录 2代表登录过期
+    // localStorage.setItem('token','1')
+    searchMap.forEach((item) => {
+      if (item.key == "token") {
+        localStorage.setItem("token", item.value);
+      }
+    });
+    let loginstate;
+    let token = localStorage.getItem("token");
+    if (token == null) {
+      loginstate = 0;
+      tip.innerHTML = "msg:请登录后获取资源";
+      rollback.style.display = "none";
+    } else {
+      let expireTime = localStorage.getItem("expireTime");
+      if (false) {
+        //处理登录过期的逻辑
+      } else {
+        //登录成功
+        loginstate = 1;
+        signin.style.display = "none";
+        tip.innerHTML = "msg:登录成功";
+      }
+    }
+    let resource = document.querySelector(".resource");
+    resource.addEventListener("click", () => {
+      if (loginstate == 1)
+        location.href = "http://localhost:8686/resource?token=" + token;
+      else {
+        alert("没有登录");
+      }
+    });
+  </script>
+</html>

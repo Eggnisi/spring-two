@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="title">第三方登录</div>
+    <div class="name">
+      <div class="name_title">用户名</div>
+      <input class="name_input" type="text" />
+    </div>
+    <div class="pwd">
+      <div class="pwd_title">密码</div>
+      <input class="pwd_input" type="password" />
+    </div>
+    <button class="signin">授权登录</button>
+    <button class="newuser">注册账号</button>
+    <div class="tip">msg:</div>
+  </body>
+  <script>
+    let name;
+    let pwd;
+    let tip = document.querySelector('.tip')
+    let nameinput = document.querySelector(".name_input");
+    nameinput.addEventListener("input", () => {
+      name = nameinput.value;
+    });
+
+    let pwdinput = document.querySelector(".pwd_input");
+
+    pwdinput.addEventListener("input", () => {
+      pwd = pwdinput.value;
+    });
+
+    //编写登录
+    let signin = document.querySelector(".signin");
+    signin.addEventListener("click", async () => {
+      const data = await new Promise((resolve,reject)=>{
+        fetch("http://localhost:8686/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        mode: "cors",
+        body: JSON.stringify({
+          name,
+          password:pwd,
+          redirect_url_code:2
+        })
+      }).then(function (res) {
+          if (res.status === 200) {
+            return resolve(res.json()) 
+          } else {
+            return reject(res.json());
+          }
+        })
+      })
+      console.log(data);
+      if(data.code==0){
+        const {url,token}= data.data
+        alert('登录成功，即将跳转')
+        setTimeout(()=>{
+          location.href = url+'?token='+token
+        },1000)
+      }
+        tip.innerHTML = 'msg:'+data.msg
+    });
+    //编写注册
+    let newuser = document.querySelector(".newuser");
+    newuser.addEventListener("click", async () => {
+      const data = await fetch("http://localhost:8686/auth/newlogin", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        mode: "cors",
+        body: JSON.stringify({
+          name,
+          password:pwd,
+          redirect_url_code:2
+        })
+      })
+        .then(function (res) {
+          if (res.status === 200) {
+            return res.json();
+          } else {
+            return Promise.reject(res.json());
+          }
+        })
+        if(data.code==0){
+        const {url,token}= data.data
+        alert('注册成功，即将跳转')
+        setTimeout(()=>{
+          location.href = url+'?token='+token
+        },1000)
+      }
+        tip.innerHTML = 'msg:'+data.msg
+        console.log(data);
+    });
+  </script>
+</html>
