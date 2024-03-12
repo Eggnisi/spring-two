@@ -3,3 +3,4 @@
 + 项目使用ts开发，使用的技术有mysql，koa。emmm，好像没了
 + 严格采用router-controller-service三层体系开发后端服务
 + 使用sequelize作为ORM框架
++ 使用dotenv加载环境变量，
